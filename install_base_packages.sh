@@ -17,11 +17,11 @@ sudo apt-get install -y nano git curl software-properties-common php-pear \
 # Install php5
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update -y
-sudo apt-get install -y php5-fpm php5-curl php5-mcrypt php5-gd \
-	php5-imagick php5-mysql
+sudo apt-get install -y php5.6-fpm php5.6-curl php5.6-mcrypt php5.6-gd \
+	php5.6-imagick php5.6-mysql
 
 # Install nginx
-add-apt-repository 'deb http://nginx.org/packages/ubuntu/ trusty nginx'
+add-apt-repository ppa:ondrej/nginx #'deb http://nginx.org/packages/ubuntu/ trusty nginx'
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
 apt-get update -y
 apt-get install -y nginx
