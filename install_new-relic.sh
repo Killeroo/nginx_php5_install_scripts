@@ -17,7 +17,7 @@ wget -O- https://download.newrelic.com/548C16BF.gpg | sudo apt-key add -
 sudo apt-get -y update
 
 # Install new-relic
-sudo apt-get -y install newrelic-sysmond
+sudo apt-get -y install newrelic-sysmond newrelic-php5
 
 # fetch and add api key
 key=$(bash $PWD/fetch_password.sh new-relic)
