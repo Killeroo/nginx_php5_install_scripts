@@ -8,6 +8,13 @@ if [ $# -ne 2 ]; then
 fi
 
 # validate operator argument
+valid_operators = ['start','stop','restart','reload']
+if [[ " ${valid_operators[*]} " == *" $2 "* ]]; then
+    echo "argument is valid"
+else
+	echo "argument is not valid"
+fi
+exit 
 operator="start"
 
 if [ $1 = "php" ]; then
