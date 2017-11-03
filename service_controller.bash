@@ -8,7 +8,7 @@ if [ $# -ne 2 ]; then
 fi
 
 # validate operator argument
-valid_operators = ['start','stop','restart','reload']
+valid_operators = ( "start" "stop" "restart" "reload" )
 if [[ " ${valid_operators[*]} " == *" $2 "* ]]; then
     echo "argument is valid"
 else
