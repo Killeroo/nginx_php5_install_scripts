@@ -22,3 +22,5 @@ sudo mv vhost.cnf /etc/nginx/cnf.d/default.cnf
 
 # cnfigure firewall
 sudo ufw allow 'Nginx Full'
+sudo ufw allow 22/tcp
+sudo ufw enable

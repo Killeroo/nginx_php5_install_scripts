@@ -40,5 +40,5 @@ echo "-> Cloning repository to /var/www..."
 sudo bash ./clone_repo.bash
 echo "-> Starting services..."
 sudo bash ./service_controller.bash all start
-echo "-> Installation complete =^-^="
+echo "-> Installation complete"
 
