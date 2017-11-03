@@ -43,7 +43,8 @@ sudo bash ./install_new-relic.bash
 echo "-> Creating account..."
 sudo bash ./create_account.bash
 echo "-> Cloning repository to /var/www..."
-#sudo bash ./clone_repo.bash
+sudo bash ./clone_repo.bash
 echo "-> Starting services..."
-#sudo bash ./service_controller.bash
+sudo bash ./service_controller.bash all start
+echo "-> Installation complete =^-^="
 
