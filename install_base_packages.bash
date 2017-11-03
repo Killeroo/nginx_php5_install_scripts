@@ -29,7 +29,8 @@ sudo apt-get install -y nginx
 # Move nginx config
 sudo mv vhost.conf /etc/nginx/conf.d/default.conf
 
-# Pull git repo
+# Configure firewall
+sudo ufw allow 'Nginx Full'
 
 # Create account and login
 #sudo adduser --system --home /home/$user --disabled-password --shell /bin/bash $user
