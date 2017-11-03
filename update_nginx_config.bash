@@ -6,4 +6,4 @@ if [ $# -ne 2 ]; then
     exit;
 fi
 
-sed -i "s|$1 .*|$1 $2|" /etc/nginx/cnf.d/default.cnf && echo "> \"$1 $2\" added to nginx config"
+sed -i "s|$1 .*|$1 $2;|" /etc/nginx/conf.d/default.conf && echo "> \"$1 $2\" added to /etc/nginx/conf.d/default.conf"

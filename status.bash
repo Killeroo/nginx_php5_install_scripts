@@ -18,6 +18,14 @@ echo "@@          FIREWALL STATUS          @@"
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 sudo ufw status
 
+echo
+echo "Versions:"
+echo "-------------------"
+nginx -v
+echo "-------------------"
+php --version 
+echo "-------------------"
+
 address=$(curl -4 icanhazip.com)
 echo
 echo "Server's public address is: $address"
