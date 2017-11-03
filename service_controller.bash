@@ -7,27 +7,28 @@ if [ $# -ne 2 ]; then
 	exit;
 fi
 
-# validate operator argument
-valid_operators = ( "start" "stop" "restart" "reload" )
+# Validate operator argument
+valid_operators=( "start" "stop" "restart" "reload" )
 if [[ " ${valid_operators[*]} " == *" $2 "* ]]; then
-    echo "argument is valid"
+	operator=$2
 else
-	echo "argument is not valid"
+	echo "UNKOWN ARGUMENT: Use either [ start | stop | restart | reload ] "
+	exit
 fi
-exit 
-operator="start"
 
+# Perform service operation
 if [ $1 = "php" ]; then
-	echo "meow php"
-	# sudo systemctl $operator php5.6-fpm
+	sudo systemctl $operator php5.6-fpm
 elif [ $1 = "nginx" ]; then
-	echo " meow nginx"
-	# sudo systemctl $operator nginx
+	sudo systemctl $operator nginx
 elif [ $1 = "all" ]; then
-	echo "meow all"
-	# sudo systemctl $operator php5.6-fpm
-	# sudo systemctl $operator nginx
+	sudo systemctl $operator php5.6-fpm
+	sudo systemctl $operator nginx
 else
 	echo "UNKOWN ARGUMENT: Use either [ php | nginx | all ] "
 	exit;
 fi
+
+echo
+echo "Service [$1] told to [$2]..."
+echo
