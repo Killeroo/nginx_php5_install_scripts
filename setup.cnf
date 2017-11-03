@@ -2,8 +2,11 @@
 account_name=
 account_password=
 
-# nginx config
+# nginx cnfig
 site_name=
 
+# Repo to clone from
+repo=
+
 # new-relic api key
-new-relic_key=
+newrelic_key=

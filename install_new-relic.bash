@@ -20,16 +20,16 @@ sudo apt-get -y update
 sudo apt-get -y install newrelic-sysmond newrelic-php5
 
 # fetch and add api key
-key=$(bash $PWD/query_config_file.bash new-relic)
-if [[ -z "${key// }" ]]; then
+source $PWD/setup.cnf # Load config file
+if [[ -z "${newrelic_key// }" ]]; then
 	echo
 	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-	echo "@@ NO NEW-RELIC KEY FOUND IN SETUP.CONF! @@"
+	echo "@@ NO NEW-RELIC KEY FOUND IN SETUP.CNF!  @@"
 	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-	echo "Please ensure a key is entered in setup.conf and try again"
+	echo "Please ensure a key is entered in setup.cnf and try again"
 	exit
 fi
-sudo nrsysmond-config --set license_key=$key
+sudo nrsysmond-cnfig --set license_key=$newrelic_key
 
 # Start new-relic service
 #systemctl start newrelic-sysmond

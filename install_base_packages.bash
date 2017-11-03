@@ -17,8 +17,8 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
 sudo apt-get update -y
 sudo apt-get install -y nginx
 
-# Move nginx config
-sudo mv vhost.conf /etc/nginx/conf.d/default.conf
+# Move nginx cnfig
+sudo mv vhost.cnf /etc/nginx/cnf.d/default.cnf
 
-# Configure firewall
+# cnfigure firewall
 sudo ufw allow 'Nginx Full'

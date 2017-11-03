@@ -1,9 +1,7 @@
-
-# Fetch username and password from setup.conf
-username=$(bash $PWD/query_config_file.bash username)
-password=$(bash $PWD/query_config_file.bash password)
+# Load config file
+source $PWD/setup.cnf
 
 # Create account
-sudo adduser --system --home /home/$user --disabled-password --shell /bin/bash $user
-(echo $password; echo $password; ) | sudo passwd $user
-sudo usermod -aG sudo $user
+sudo adduser --system --home /home/$account_name --disabled-password --shell /bin/bash $account_name
+(echo $account_password; echo $account_password; ) | sudo passwd $account_name
+sudo usermod -aG sudo $account_name
