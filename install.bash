@@ -24,18 +24,12 @@ elif [ $config_status -eq 2 ]; then
     echo "Please enter details into $PWD/setup.cnf"
     echo "then try again."
     exit;
-else
-    echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-	echo "@@        PROBLEM WITH SETUP.CNF         @@"
-	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    echo "Ensure the file exists and try again."
-    exit
 fi
 echo "-> Config file good"
 source $PWD/setup.cnf
 
 echo "-> Installing base packages..."
-sudo bash ./install_bash_packages.bash
+sudo bash ./install_base_packages.bash
 echo "-> Updating nginx config..."
 sudo bash ./update_nginx_config.bash server_name $site_name
 echo "-> Installing new-relic..."
