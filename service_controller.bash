@@ -29,6 +29,4 @@ else
 	exit;
 fi
 
-echo
-echo "Service [$1] told to [$2]..."
-echo
+echo "> Service [$1] told to [$2]..."

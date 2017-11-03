@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Interupter check
+[[ $_ != $0 ]] && sourced=1 || sourced=0
+if [ $sourced -ne 1 ]; then
+	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+	echo "@@      PLEASE RUN SCRIPT WITH BASH      @@"
+	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+	exit;
+fi
+
 # Root check
 if [[ $EUID -ne 0 ]]; then
 	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"

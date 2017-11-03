@@ -3,7 +3,9 @@
 # Check if script is being run with bash
 [[ $_ != $0 ]] && sourced=1 || sourced=0
 if [ $sourced -ne 1 ]; then
-	echo "Please use 'bash install_new-relic.sh to run the script"
+	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+	echo "@@     PLEASE RUN SCRIPT WITH BASH!      @@"
+	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 	exit;
 fi
 
