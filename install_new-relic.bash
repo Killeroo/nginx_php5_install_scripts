@@ -29,6 +29,7 @@ if [[ -z "${newrelic_key// }" ]]; then
 	echo "@@ NO NEW-RELIC KEY FOUND IN SETUP.CNF!  @@"
 	echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 	echo "Please ensure a key is entered in setup.cnf and try again"
+	echo
 	exit
 fi
 sudo nrsysmond-cnfig --set license_key=$newrelic_key

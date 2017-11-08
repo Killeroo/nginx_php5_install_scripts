@@ -3,7 +3,7 @@
 # Get basic packages 
 sudo apt-get update -y
 sudo apt-get install -y nano git curl software-properties-common php-pear \
-	build-essential libmcrypt-dev mysql-client apt-show-versions openssl
+	build-essential libmcrypt-dev mysql-client apt-show-versions openssl expect
 
 # Install php5
 expect -c "
