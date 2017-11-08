@@ -41,11 +41,12 @@ echo "-> Installing base packages..."
 sudo bash ./install_base_packages.bash
 echo "-> Updating nginx config..."
 sudo bash ./update_nginx_config.bash server_name $site_name
+sudo bash ./update_nginx_config.bash root /var/www/$site_name
 echo "-> Installing new-relic..."
 sudo bash ./install_new-relic.bash
 echo "-> Creating account..."
 sudo bash ./create_account.bash
-echo "-> Cloning repository to /var/www..."
+echo "-> Cloning repository to /var/www/$site_name..."
 sudo bash ./clone_repo.bash
 echo "-> Starting services..."
 sudo bash ./service_controller.bash all start

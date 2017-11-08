@@ -10,7 +10,6 @@ expect -c "
 spawn sudo add-apt-repository ppa:ondrej/php
 expect -nocase \"*to continue or ctrl-c to cancel adding it\" {send \"\r\"; interact}
 "
-#sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update -y
 sudo apt-get install -y php5.6-fpm php5.6-curl php5.6-mcrypt php5.6-gd \
 	php5.6-imagick php5.6-mysql
@@ -20,14 +19,16 @@ expect -c "
 spawn sudo add-apt-repository ppa:ondrej/nginx
 expect -nocase \"*to continue or ctrl-c to cancel adding it\" {send \"\r\"; interact}
 "
-#sudo add-apt-repository ppa:ondrej/nginx #'deb http://nginx.org/packages/ubuntu/ trusty nginx'
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
 sudo apt-get update -y
 sudo apt-get install -y nginx
 sudo apt-get clean
 
-# Move nginx cnfig
+# Move nginx config
 sudo mv vhost.conf /etc/nginx/conf.d/default.conf
+
+# Synlink to /etc/nginx/sites_enabled
+ln -s /etc/nginx/conf.d/default.conf /etc/nginx/sites-enabled
 
 # cnfigure firewall
 expect -c "

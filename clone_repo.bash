@@ -19,6 +19,9 @@ orig_dir=$PWD
 # Switch to webroot
 cd /var/www/
 
+# Create new dir for site
+mkdir $site_name & cd $site_name
+
 # clone repo
 git clone $repo
 
