@@ -20,10 +20,15 @@ orig_dir=$PWD
 cd /var/www/
 
 # Create new dir for site
-mkdir $site_name & cd $site_name
+mkdir $site_name
+cd $site_name
 
 # clone repo
 git clone $repo
+
+# Alter ownership and permissions
+sudo chown -R $account_name /var/www/ 
+sudo chmod -R 755 /var/www/
 
 # switch back to original directory
 cd $orig_dir
