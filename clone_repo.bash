@@ -24,7 +24,7 @@ mkdir $site_name
 cd $site_name
 
 # clone repo
-git clone $repo
+git clone $repo /var/www/$site_name
 
 # Alter ownership and permissions
 sudo chown -R $account_name /var/www/ 
