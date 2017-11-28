@@ -30,6 +30,9 @@ sudo mv vhost.conf /etc/nginx/conf.d/default.conf
 # Synlink to /etc/nginx/sites_enabled
 ln -s /etc/nginx/conf.d/default.conf /etc/nginx/sites-enabled
 
+# Fetch composer installer
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
 # cnfigure firewall
 expect -c "
 spawn sudo ufw enable
