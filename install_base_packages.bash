@@ -3,7 +3,7 @@
 # Get basic packages 
 sudo apt-get update -y
 sudo apt-get install -y nano git curl software-properties-common php-pear \
-	build-essential libmcrypt-dev mysql-client apt-show-versions openssl expect
+	build-essential libmcrypt-dev mysql-client apt-show-versions openssl expect zip
 
 # Install php5
 expect -c "
@@ -12,7 +12,7 @@ expect -nocase \"*to continue or ctrl-c to cancel adding it\" {send \"\r\"; inte
 "
 sudo apt-get update -y
 sudo apt-get install -y php5.6-fpm php5.6-curl php5.6-mcrypt php5.6-gd \
-	php5.6-imagick php5.6-mysql
+	php5.6-imagick php5.6-mysql php5.6-curl php7.0-curl php5.6-mbstring php7.0-mbstring
 
 # Install nginx
 expect -c "

@@ -11,16 +11,13 @@ sudo bash ./service_controller.bash all stop
 orig_dir=$PWD
 cd /var/www/$site_name
 
-# Stop services
-sudo bash ./service_controller.bash all stop
-
 # Git pull
 git pull
 
 # Run composer
-composer install
+sudo composer install
 
-# Configure donate scripts
+# Configure scripts
 
 # Switch back to original dir
 cd $orig_dir
