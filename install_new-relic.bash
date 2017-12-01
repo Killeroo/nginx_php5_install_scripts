@@ -32,7 +32,7 @@ if [[ -z "${newrelic_key// }" ]]; then
 	echo
 	exit
 fi
-sudo nrsysmond-cnfig --set license_key=$newrelic_key
+sudo nrsysmond-config --set license_key=$newrelic_key
 
 # Start new-relic service
 #systemctl start newrelic-sysmond

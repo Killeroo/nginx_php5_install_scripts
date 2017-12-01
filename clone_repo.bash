@@ -27,8 +27,14 @@ cd $site_name
 git clone $repo /var/www/$site_name
 
 # Alter ownership and permissions
-sudo chown -R $account_name /var/www/ 
+sudo chown -R $account_name:www-data /var/www/ 
 sudo chmod -R 755 /var/www/
+
+# Setup temp dirs
+mkdir /var/www/$site_name/system/logs
+mkdir /var/www/$site_name/system/cache
+sudo chmod -R 775 /var/www/$site_name/system/logs
+sudo chmod -R 775 /var/www/$site_name/system/cache
 
 # switch back to original directory
 cd $orig_dir
